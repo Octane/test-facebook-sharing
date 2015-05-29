@@ -15,8 +15,10 @@
                 'ogimage1200x1200_image300x300.html',
                 'ogimage1200x1200_image1200x1200.html',
                 'image300x300.html',
-                'image1200x1200.html'
-
+                'image1200x1200.html',
+                'ogimage300x300_image600x600.html',
+                'ogimage600x600_image600x600.html',
+                'ogimage1200x1200_image600x600.html'
             ];
             files.forEach(function (file) {
                 this.insertAdjacentHTML('beforeend', '<li><a href="http://www.facebook.com/sharer.php?s=100&p[url]=' + encodeURIComponent(host + file) + '" target="_blank">share: ' + file + '</a></li>');
