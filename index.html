@@ -3,28 +3,13 @@
     <head>
         <title>Test Facebook sharing</title>
         <meta charset="UTF-8">
-        <style>
-            .url {
-                margin: 24px;
-            }
-        </style>
     </head>
     <body>
+        <ol class="share"></ol>
+        <ol class="open"></ol>
         <script>
             var host = 'http://octane.github.io/test-facebook-sharing/';
-
-            function template(file) {
-                return [
-                    '<div class="url">',
-                        '<a href="http://www.facebook.com/sharer.php?s=100&p[url]=' + encodeURIComponent(host + file) + '" target="_blank">share: ' + file + '</a>',
-                    '</div>',
-                    '<div class="url">',
-                        '<a href="' + host + file + '" target="_blank">open: ' + file + '</a>',
-                    '<div>'
-                ].join('');
-            }
-
-            [
+            var files = [
                 'ogimage300x300_image300x300.html',
                 'ogimage300x300_image1200x1200.html',
                 'ogimage1200x1200_image300x300.html',
@@ -32,9 +17,14 @@
                 'image300x300.html',
                 'image1200x1200.html'
 
-            ].forEach(function (variant) {
-                document.body.insertAdjacentHTML('beforeend', template(variant));
-            });
+            ];
+            files.forEach(function (file) {
+                this.insertAdjacentHTML('beforeend', '<li><a href="http://www.facebook.com/sharer.php?s=100&p[url]=' + encodeURIComponent(host + file) + '" target="_blank">share: ' + file + '</a></li>');
+            }, document.querySelector('.share'));
+
+            files.forEach(function (file) {
+                this.insertAdjacentHTML('beforeend', '<li><a href="' + host + file + '" target="_blank">open: ' + file + '</a></li>');
+            }, document.querySelector('.open'));
         </script>
     </body>
 </html>
