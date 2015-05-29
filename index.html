@@ -9,7 +9,7 @@
             var host = 'http://octane.github.io/test-facebook-sharing/';
 
             function template(file) {
-                return '<div><a href="http://www.facebook.com/sharer.php?url=' + uncodeURIComponent(host + file) + '" target="_blank">' + file + '</a><div>';
+                return '<div><a href="http://www.facebook.com/sharer.php?s=100&p[url]=' + encodeURIComponent(host + file) + '" target="_blank">' + file + '</a><div>';
             }
 
             [
