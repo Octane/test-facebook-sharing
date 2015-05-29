@@ -3,6 +3,11 @@
     <head>
         <title>Test Facebook sharing</title>
         <meta charset="UTF-8">
+        <style>
+            .url {
+                margin: 24px;
+            }
+        </style>
     </head>
     <body>
         <script>
@@ -10,10 +15,10 @@
 
             function template(file) {
                 return [
-                    '<div>',
+                    '<div class="url">',
                         '<a href="http://www.facebook.com/sharer.php?s=100&p[url]=' + encodeURIComponent(host + file) + '" target="_blank">share: ' + file + '</a>',
                     '</div>',
-                    '<div>',
+                    '<div class="url">',
                         '<a href="' + host + file + '" target="_blank">open: ' + file + '</a>',
                     '<div>'
                 ].join('');
