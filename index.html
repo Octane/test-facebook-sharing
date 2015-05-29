@@ -7,6 +7,7 @@
     <body>
         <ol class="share"></ol>
         <ol class="open"></ol>
+        <ul class="max-size"></ul>
         <script>
             var host = 'http://octane.github.io/test-facebook-sharing/';
             var files = [
@@ -27,6 +28,11 @@
             files.forEach(function (file) {
                 this.insertAdjacentHTML('beforeend', '<li><a href="' + host + file + '" target="_blank">open: ' + file + '</a></li>');
             }, document.querySelector('.open'));
+
+            var maxSize = document.querySelector('.max-size');
+            for (var i = 610; i < 1200; i += 10) {
+                maxSize.insertAdjacentHTML('beforeend', '<li><a href="http://www.facebook.com/sharer.php?s=100&p[url]=' + encodeURIComponent(host + 'test' + i + '.html') + '" target="_blank">share: test' + i + '.html</a></li>');
+            }
         </script>
     </body>
 </html>
